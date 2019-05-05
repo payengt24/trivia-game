@@ -40,7 +40,19 @@ var result = $('.result')
 result.hide()
 
 var startGame = function () {
+
+    $("#startButton").remove();
+
     if (!clockRunning) {
+
+        buttonDone.empty()
+        timeContent.empty();
+        questionDisplay.empty();
+        buttonDone.show();
+        timeContent.show();
+        questionDisplay.show();
+         correct = 0;
+        incorrect = 0;
         timeContent.append(" <h1 id='timeRemaining'>Time Remaining: <span id='time'>00:60</span></h1>");
         timer = 60;
         intervalId = setInterval(count, 1000)
@@ -64,6 +76,8 @@ buttonDone.on('click', function () {
     timeContent.hide();
     questionDisplay.hide();
     clockRunning = false;
+
+
 
     $.each($('input[name="0"]:checked'), function (){
         if ($(this).val() == questions[0].correctAnswer) {
@@ -112,8 +126,10 @@ buttonDone.on('click', function () {
 
     $('#correct').text(correct);
     $('#incorrect').text(incorrect);
-    $('#unanswered').text(questions.length - (correct - incorrect));
+    $('#unanswered').text(questions.length - (correct + incorrect));
+
     result.show()
+
 })
 
 var stopTime = function () {
@@ -163,7 +179,8 @@ $('#startButton').on('click', function () {
 })
 
 $('#playAgain').on('click', function () {
-    result.hide()
+    result.hide();
+
     startGame()
 })
 
