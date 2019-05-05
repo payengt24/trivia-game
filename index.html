@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <!-- <link
+      href="https://fonts.googleapis.com/css?family=Merriweather|Sofia"
+      rel="stylesheet"
+    /> -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/bootstrap-4.3.1-dist/css/bootstrap.min.css"
+    />
+    <script src="./assets/javascript/jquery.js"></script>
+    <script src="./assets/javascript/app.js"></script>
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid text-center" id="triviaHeader">
+      <div class="container">
+        <h1 class="display-4">Trivia Time</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content">
+        <div class="row text-center time">
+          <div class="col-md-12 gameContent">
+            <button type="button" class="btn btn-danger" id="startButton">
+              Start Game!
+            </button>
+            <div class="timerContent"></div>
+            <div class="questionsContent"></div>
+            <div class="buttonDone"></div>
+
+            <div class="result">
+              <div class="card">
+                <div class="card-header allDoneResult">All Done!</div>
+                <div class="card-body">
+                  <h5 class="card-title">Correct Guesses:  <span id="correct"></span></h5>
+                  <h5 class="card-title">Incorrect Guesses: <span id="incorrect"></span></h5>
+                  <h5 class="card-title">
+                        Unanswered: <span id="unanswered"></span>
+                  </h5>
+                </div>
+              </div>
+              <button type="button" class="btn btn-danger" id="playAgain">Play Again!</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

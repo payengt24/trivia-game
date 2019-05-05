@@ -1,0 +1,70 @@
+body{
+    background-image: url("../images/image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   height: 1000px;
+}
+
+#triviaHeader {
+    background: green;
+    border-bottom: solid 5px yellow;
+    height: 150px;
+    font-family: 'Merriweather', serif;
+    color: white;
+}
+
+.content{
+    background: white;
+    height: 800px;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.time{
+    padding: 20px;
+}
+
+#startButton{
+    margin: 300px;
+    height: 100px;
+    width: 300px;
+    
+}
+
+#playAgain {
+    margin: 50px;
+    height: 100px;
+    width: 300px;
+}
+
+#done{
+    margin: 20px;
+    height: 100px;
+    width: 300px;
+}
+
+.radioBtn{
+    margin: 20px;
+}
+
+#timeRemaining{
+    color: red;
+    font-size: 60px;
+    margin-bottom: 50px;
+}
+
+.card{
+    width: 50%;
+    margin: auto;
+    margin-top: 150px;
+}
+
+.card-body{
+    background: yellow;
+}
+
+.allDoneResult{
+    color: red;
+    font-size: 50px;
+}
