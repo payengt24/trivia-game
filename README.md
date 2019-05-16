@@ -12,6 +12,10 @@ This a trivia game built using jquery.
  **Or you can also just go to the below link! :stuck_out_tongue_winking_eye:**
 
  ```https://payengt24.github.io/trivia-game.io/```
+
+ ## Preview of the application
+
+ ![example of App](example.png)
  
 
 
