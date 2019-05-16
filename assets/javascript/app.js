@@ -7,11 +7,11 @@ $(document).ready(function () {
         },
         {
             q: 'What do you call a time span of one thousand years?',
-            answers: ['Millennium', 'Century', 'Decade', 'Myrietes'],
+            answers: ['Century', 'Millennium', 'Decade', 'Myrietes'],
             correctAnswer: 'Millennium'
         },{
             q: 'How many degrees are found in a circle?',
-            answers: [360, 180, 50, 100],
+            answers: [ 180, 50, 100, 360],
             correctAnswer: 360
         },{
             q: 'How many squares are there on a chess board?',
@@ -19,7 +19,7 @@ $(document).ready(function () {
             correctAnswer: 64
         },{
             q: 'What sort of creature did St George allegedly slay?',
-            answers: ['Dragon', 'Snake', 'Mermaid', 'Wolf'],
+            answers: ['Snake', 'Mermaid', 'Dragon', 'Wolf'],
             correctAnswer: 'Dragon'
         },
     ]
@@ -53,14 +53,14 @@ var startGame = function () {
         questionDisplay.show();
          correct = 0;
         incorrect = 0;
-        timeContent.append(" <h1 id='timeRemaining'>Time Remaining: <span id='time'>00:60</span></h1>");
-        timer = 60;
+        timeContent.append(" <h1 id='timeRemaining'>Time Remaining: <span id='time'>00:30</span></h1>");
+        timer = 30;
         intervalId = setInterval(count, 1000)
         clockRunning = true
         for (let i = 0; i < questions.length; i++) {
             questionDisplay.append('<h2>' + questions[i].q + '</h2>')
             for(let j = 0; j < questions[i].answers.length; j++){
-                questionDisplay.append('<input class="radioBtn" type="radio" name=' + i + ' value= ' + questions[i].answers[j] + '>' + questions[i].answers[j] +'</input>')
+                questionDisplay.append('<input class="radioBtn" type="radio" name=question-' + i + ' value= ' + questions[i].answers[j] + '>' + questions[i].answers[j] +'</input>')
             }
         }
         
@@ -78,8 +78,10 @@ buttonDone.on('click', function () {
     clockRunning = false;
 
 
+    
+    $.each($('input[name="question-0"]:checked'), function (){
+        console.log($('input[name="0"]:checked'))
 
-    $.each($('input[name="0"]:checked'), function (){
         if ($(this).val() == questions[0].correctAnswer) {
             correct++;
           }
@@ -88,7 +90,8 @@ buttonDone.on('click', function () {
           }
     })
 
-    $.each($('input[name="1"]:checked'), function (){
+    $.each($('input[name="question-1"]:checked'), function (){
+        console.log($('input[name="1"]:checked'))
         if ($(this).val() == questions[1].correctAnswer) {
             correct++;
           }
@@ -97,7 +100,7 @@ buttonDone.on('click', function () {
           }
     })
 
-    $.each($('input[name="2"]:checked'), function (){
+    $.each($('input[name="question-2"]:checked'), function (){
         if ($(this).val() == questions[2].correctAnswer) {
             correct++;
           }
@@ -106,7 +109,7 @@ buttonDone.on('click', function () {
           }
     })
 
-    $.each($('input[name="3"]:checked'), function (){
+    $.each($('input[name="question-3"]:checked'), function (){
         if ($(this).val() == questions[3].correctAnswer) {
             correct++;
           }
@@ -115,7 +118,7 @@ buttonDone.on('click', function () {
           }
     })
 
-    $.each($('input[name="4"]:checked'), function (){
+    $.each($('input[name="question-4"]:checked'), function (){
         if ($(this).val() == questions[4].correctAnswer) {
             correct++;
           }
@@ -150,7 +153,6 @@ var count = function () {
         stopTime();
         timeContent.hide();  
     }
-
 }
 
 var timeConverter = function (timer) {
