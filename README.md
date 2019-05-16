@@ -15,7 +15,7 @@ This a trivia game built using jquery.
 
  ## Preview of the application
 
- ![example of App](<img src="example.png">)
+ ![example of App](example.png)
  
 
 
