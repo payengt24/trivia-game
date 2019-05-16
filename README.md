@@ -15,7 +15,7 @@ This a trivia game built using jquery.
 
  ## Preview of the application
 
- ![example of App](example.png =250x250)
+ ![example of App](example.png  width="200" height="400")
  
 
 
